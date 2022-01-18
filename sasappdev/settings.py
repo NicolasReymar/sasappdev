@@ -25,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-b!o+u0qli5alwt(g@dyn)gys36bmcli=&_cvso#o4%ev#e8u=x'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -87,7 +87,7 @@ import dj_database_url
 from decouple import config
 DATABASE = {
     'default': dj_database_url.config(
-        default = config('HEROKU_POSTGRESQL_IVORY_URL')
+        default = config('DATABASE_URL')
     )
 }
 
